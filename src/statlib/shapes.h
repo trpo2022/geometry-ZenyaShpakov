@@ -1,2 +1,2 @@
-void Cirle(float*);
-void Triangle(float*);
+void CirleR(float*);
+void TriangleR(float*);
