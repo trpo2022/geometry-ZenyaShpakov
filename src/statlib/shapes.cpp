@@ -4,7 +4,7 @@
 #define pi 3.14
 #define Size 2
 
-void Circle(float Arr_Circle[])
+void CircleR(float Arr_Circle[])
 {
 	float Perim, Square;
 	Perim = 2 * Arr_Circle[2] * pi;
@@ -13,7 +13,7 @@ void Circle(float Arr_Circle[])
 	printf("Squre of circle: %f\n",Square);
 }
 
-void Triangle(float Tria_Point[])
+void TriangleR(float Tria_Point[])
 {
 	float Perimetr = 0, storona_a = 0, storona_b = 0, storona_c = 0, Square = 0,  p;
 	storona_a = sqrt(powf(Tria_Point[0] - Tria_Point[2], 2) + powf(Tria_Point[1]-Tria_Point[3], 2));
