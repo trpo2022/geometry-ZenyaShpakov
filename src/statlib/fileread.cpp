@@ -31,7 +31,7 @@ void Circle(char cc[])
 void Triangle(char cc[])
 {
 	int i = 0;
-	float coordinate_to_triangle_in_index[6] = {0}, c = 0;
+	float coordinate_to_triangle_in_index[6] = {0};
 	printf("%s", cc);
 	while(cc[i] != '(')
 	{
