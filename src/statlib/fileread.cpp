@@ -57,9 +57,9 @@ void fileread()
 {
 	char cc[100];
 	FILE *fp;
-	if((fp= fopen("/src/statlib/input.txt", "r"))==NULL)
+	if((fp= fopen("input.txt", "r"))==NULL)
 	{
-		perror("Error occured while opening file");
+		perror("Error occured while opening fileAAAA");
 		return;
 	}
 	while((fgets(cc, 256, fp))!=NULL)
