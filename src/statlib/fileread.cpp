@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "shapes.h"
-#inclide "fileread.h"
+#include "readfile.h"
 
 void Circle(char cc[])
 {
@@ -53,14 +53,14 @@ void Triangle(char cc[])
 	TriangleR(coordinate_to_triangle_in_index);
 }
 
-int main()
+void fileread()
 {
 	char cc[100];
 	FILE *fp;
-	if((fp= fopen("haha.txt", "r"))==NULL)
+	if((fp= fopen("/src/statlib/input.txt", "r"))==NULL)
 	{
 		perror("Error occured while opening file");
-		return 1;
+		return;
 	}
 	while((fgets(cc, 256, fp))!=NULL)
 	{
@@ -68,7 +68,6 @@ int main()
 		if (cc[0] == 'c') Circle(cc);
 	}
 	fclose(fp);
-	return 0;
 }
 
 
