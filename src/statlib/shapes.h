@@ -1,2 +1,4 @@
-void CirleR(float*);
+#pragma once
+
+void CircleR(float*);
 void TriangleR(float*);

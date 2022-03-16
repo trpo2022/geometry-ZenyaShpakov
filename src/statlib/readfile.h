@@ -1,1 +1,3 @@
-int readfile();
+#pragma once
+
+void fileread();
