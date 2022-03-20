@@ -8,7 +8,7 @@ void Circle(char cc[])
 {
     int i = 0;
     float coordinate_to_circle_in_index[3] = {0};
-    printf("%s\n", cc);
+    printf("%s", cc);
     while (cc[i] != '(') 
     {
         i++;
@@ -18,8 +18,7 @@ void Circle(char cc[])
     {
         if (cc[i] == '.') 
 	{
-            coordinate_to_circle_in_index[count]
-                    = (cc[i - 1] & 0x0F) + (0.1 * (cc[i + 1] & 0x0F));
+            coordinate_to_circle_in_index[count] = (cc[i - 1] & 0x0F) + (0.1 * (cc[i + 1] & 0x0F));
             count++;
         }
         i++;
@@ -50,8 +49,9 @@ void Triangle(char cc[])
         i++;
     }
     for (int j = 0; j < 6; j++) printf("%f ", coordinate_to_triangle_in_index[j]);
-    printf("\n\n");
+    printf("\n");
     TriangleR(coordinate_to_triangle_in_index);
+    printf("\n");
 }
 
 void fileread()
