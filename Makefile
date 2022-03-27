@@ -23,10 +23,10 @@ obj/src/statlib/fileread.o: src/statlib/fileread.cpp
 test: bin/test
 
 bin/test: obj/test/main.o obj/test/shapes_test.o
-	$(CC) -I src  $(CFLAGS) -o $@ $< -lm
+	$(CC) -I $(CFLAGS) -o $@ $< -lm
 
 obj/test/main.o: test/main.cpp
-	$(CC) -c -I src  $(CFLAGS) -o $@ $<
+	$(CC) -c -I $(CFLAGS) -o $@ $<
 
 obj/test/shapes_test.o: test/shapes_test.cpp
 	$(CC) -c -I src  $(CFLAGS) -o $@ $< -lm
