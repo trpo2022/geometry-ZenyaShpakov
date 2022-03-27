@@ -1,6 +1,6 @@
 #include <statlib/shapes.h>
 #include <math.h>
-#include <ctest.h>
+#include "ctest.h"
 
 CTEST(arithmetic_suite, test1)
 {
