@@ -1,4 +1,4 @@
 #pragma once
 
-float *CircleR(float*);
-float *TriangleR(float*);
+double *CircleR(double*);
+double *TriangleR(double*);

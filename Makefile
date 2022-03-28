@@ -2,7 +2,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 CC = g++
 
-all: geometry test
+all:  geometry
 
 geometry: bin/geometry
 
@@ -20,16 +20,22 @@ obj/src/statlib/shapes.o: src/statlib/shapes.cpp
 
 obj/src/statlib/fileread.o: src/statlib/fileread.cpp
 	                $(CC) -c -I src $(CFLAGS) -o $@ $< -lm
+
+.PHONY: test
+
 test: bin/test
 
-bin/test: obj/test/main.o obj/test/shapes_test.o
+bin/test: obj/test/main.o obj/test/shapes_test.o obj/test/ctest.o
 	$(CC) -I $(CFLAGS) -o $@ $< -lm
 
 obj/test/main.o: test/main.cpp
-	$(CC) -c -I $(CFLAGS) -o $@ $<
+	$(CC) -c -I thirdparty $(CFLAGS) -o $@ $<
 
 obj/test/shapes_test.o: test/shapes_test.cpp
-	$(CC) -c -I src  $(CFLAGS) -o $@ $< -lm
+	$(CC) -c -I src -I thirdparty $(CFLAGS) -o $@ $< -lm
+
+obj/test/ctest.o: thirdparty/ctest.h
+	$(CC) -c -I $(CFLAGS) -o $@ $<
 
 .PHONY: clean
 

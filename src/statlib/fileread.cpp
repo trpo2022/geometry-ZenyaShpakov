@@ -7,7 +7,7 @@
 void Circle(char cc[])
 {
     int i = 0;
-    float coordinate_to_circle_in_index[3] = {0};
+    double coordinate_to_circle_in_index[3] = {0};
     printf("%s", cc);
     while (cc[i] != '(') 
     {
@@ -31,7 +31,7 @@ void Circle(char cc[])
 void Triangle(char cc[])
 {
     int i = 0;
-    float coordinate_to_triangle_in_index[6] = {0};
+    double coordinate_to_triangle_in_index[6] = {0};
     printf("%s", cc);
     while (cc[i] != '(') 
     {
@@ -61,6 +61,7 @@ void fileread()
     if ((fp = fopen("input.txt", "r")) == NULL) 
     {
         perror("Error occured while opening file");
+
         return;
     }
     while ((fgets(cc, 256, fp)) != NULL) 

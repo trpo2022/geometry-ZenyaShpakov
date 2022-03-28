@@ -4,10 +4,10 @@
 #define pi 3.14
 #define Size 2
 
-float *CircleR(float Arr_Circle[])
+double *CircleR(double Arr_Circle[])
 {
-    float *Array_For_Shapes = new float[2];
-    float PerimCir, SquareCir;
+    double *Array_For_Shapes = new double[2];
+    double PerimCir, SquareCir;
     PerimCir = 2 * Arr_Circle[2] * pi;
     SquareCir = pi * Arr_Circle[2] * Arr_Circle[2];
     printf("Perimetr of circle: %f\n", PerimCir);
@@ -19,10 +19,10 @@ float *CircleR(float Arr_Circle[])
     delete Array_For_Shapes;
 }
 
-float  *TriangleR(float Tria_Point[])
+double *TriangleR(double Tria_Point[])
 {
-    float *Array_For_Shapes = new float[2];
-    float PerimetrTR = 0, storona_a = 0, storona_b = 0, storona_c = 0, SquareTR = 0, p;
+    double *Array_For_Shapes = new double[2];
+    double PerimetrTR = 0, storona_a = 0, storona_b = 0, storona_c = 0, SquareTR = 0, p;
     storona_a = sqrt(powf(Tria_Point[0] - Tria_Point[2], 2) + powf(Tria_Point[1] - Tria_Point[3], 2));
     storona_b = sqrt(powf(Tria_Point[0] - Tria_Point[4], 2) + powf(Tria_Point[1] - Tria_Point[5], 2));
     storona_c = sqrt(powf(Tria_Point[2] - Tria_Point[4], 2) + powf(Tria_Point[3] - Tria_Point[5], 2));
