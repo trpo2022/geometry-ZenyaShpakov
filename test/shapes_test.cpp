@@ -1,4 +1,4 @@
-#include <statlib/shapes.h>
+#include "../src/statlib/shapes.h"
 #include <math.h>
 #include "../thirdparty/ctest.h"
 
