@@ -25,17 +25,14 @@ obj/src/statlib/fileread.o: src/statlib/fileread.cpp
 
 test: bin/test
 
-bin/test: obj/test/main.o obj/test/shapes_test.o obj/test/ctest.o
-	$(CC) -I $(CFLAGS) -o $@ $< -lm
+bin/test: obj/test/main.o obj/test/shapes_test.o
+	$(CC) $(CFLAGS) -o $@ $< -lm
 
 obj/test/main.o: test/main.cpp
 	$(CC) -c $(CFLAGS) -o $@ $<
 
 obj/test/shapes_test.o: test/shapes_test.cpp
-	$(CC) -c -I src -I thirdparty $(CFLAGS) -o $@ $< -lm
-
-obj/test/ctest.o: thirdparty/ctest.h
-	$(CC) -c -I $(CFLAGS) -o $@ $<
+	$(CC) -c -I src $(CFLAGS) -o $@ $< -lm
 
 .PHONY: clean
 

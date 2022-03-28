@@ -2,13 +2,29 @@
 #include <math.h>
 #include "../thirdparty/ctest.h"
 
+
+CTEST(AOB, BOB)
+{
+	const int result = 1;
+	const int expected = 1;
+	ASSERT_EQUAL(expected, result);
+}	
 CTEST(arithmetic_suite, test1)
 {
 	double Arr_Cirle[3] = {0.0, 0.0, 1.5};
 	double* Cir = CircleR(Arr_Cirle);
-	double result = Cir[0];
-	double expected = 9.420000;
-	ASSERT_DBL_NEAR(expected, result);
+	double proverka = 9.420000;
+	int result;
+	if (proverka == Cir[0])
+		{
+			result = 1;
+		}
+		else
+		{
+			result = 0;
+		}
+	const int expected = 1;	
+	ASSERT_EQUAL(expected, result);
 }
 CTEST(arithmetic_suite, test2)
 {
