@@ -11,10 +11,13 @@ obj/test/main.o: test/main.cpp
 	        g++ -c $(CCFLAGS) -o $@ $< -lm
 
 obj/test/shapes_test.o: test/shapes_test.cpp
-	        g++ -c -I src $(CCFLAGS) -o $@ $< -lm
+	        g++ -c $(CCFLAGS) -o $@ $< -lm
 		        
-bin/test: obj/test/main.o obj/test/shapes_test.o
-	        g++ $(LDFLAGS) obj/test/main.o obj/test/shapes_test.o -o -lm
+bin/test: obj/test/main.o obj/test/shapes_test.o obj/test/shapes.o
+	        g++ $(LDFLAGS) obj/test/main.o obj/test/shapes_test.o obj/test/shapes.o -o bin/test -lm
+
+obj/test/shapes.o: src/statlib/shapes.cpp
+	 g++ -c -I src $(CFLAGS) -o $@ $< -lm
 
 bin/geometry: obj/src/geometry/main.o obj/src/statlib/statlib.a
 	        g++ $(CFLAGS) -o $@ $^ -lm
@@ -37,5 +40,4 @@ obj/src/statlib/shapes.o: src/statlib/shapes.cpp
 .PHONY: clean
 
 clean:
-	        rm obj/test/*.o bin/test
-		rm obj/src/statlib/*.a obj/src/statlib/*.o obj/src/geometry/*.o bin/geometry
+	        rm obj/test/*.o bin/test obj/src/statlib/*.a obj/src/statlib/*.o obj/src/geometry/*.o bin/geometry
