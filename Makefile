@@ -29,7 +29,7 @@ bin/test: obj/test/main.o obj/test/shapes_test.o obj/test/ctest.o
 	$(CC) -I $(CFLAGS) -o $@ $< -lm
 
 obj/test/main.o: test/main.cpp
-	$(CC) -c -I thirdparty $(CFLAGS) -o $@ $<
+	$(CC) -c $(CFLAGS) -o $@ $<
 
 obj/test/shapes_test.o: test/shapes_test.cpp
 	$(CC) -c -I src -I thirdparty $(CFLAGS) -o $@ $< -lm
