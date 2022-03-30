@@ -1,5 +1,4 @@
 CFLAGS = -Wall -Wextra -Werror
-CCFLAGS = -Wall -Wextra -Wconversion -Wredundant-decls -Wshadow -Wno-unused-parameter
 
 all: geometry
 
@@ -8,13 +7,13 @@ geometry: bin/geometry
 test: bin/test
 
 obj/test/main.o: test/main.cpp
-	        g++ -c $(CCFLAGS) -o $@ $< -lm
+	        g++ -c $(CFLAGS) -o $@ $< -lm
 
 obj/test/shapes_test.o: test/shapes_test.cpp
-	        g++ -c $(CCFLAGS) -o $@ $< -lm
+	        g++ -c $(CFLAGS) -o $@ $< -lm
 		        
 bin/test: obj/test/main.o obj/test/shapes_test.o obj/test/shapes.o
-	        g++ $(LDFLAGS) obj/test/main.o obj/test/shapes_test.o obj/test/shapes.o -o bin/test -lm
+	        g++ obj/test/main.o obj/test/shapes_test.o obj/test/shapes.o -o bin/test -lm
 
 obj/test/shapes.o: src/statlib/shapes.cpp
 	 g++ -c -I src $(CFLAGS) -o $@ $< -lm
