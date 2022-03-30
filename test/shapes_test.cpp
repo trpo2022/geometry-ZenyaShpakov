@@ -5,8 +5,9 @@
 
 CTEST(AOB, BOB)
 {
-	const int result = 1;
-	const int expected = 1;
+	double Perc[9] = {-3.0, -2.0, -1.0, 0.0, -3.0, 2.0, 0.0, 0.0, 1.5};
+	const int result = Crossing(Perc);
+	const int expected = 0;
 	ASSERT_EQUAL(expected, result);
 }	
 CTEST(arithmetic_suite, test1)
@@ -36,17 +37,17 @@ CTEST(arithmetic_suite, test2)
 }
 CTEST(arithmetic_suite, test3)
 {	
-	double Tria_Point[6] = {-3.0, -2.0, -1.0, 0.0, -3.0, -2.0};
+	double Tria_Point[6] = {-3.0, -2.0, -1.0, 0.0, -3.0, 2.0};
 	double* Tir = TriangleR(Tria_Point);
-	double result = Tir[0];
-	double expected = 5.656855;
-	ASSERT_DBL_NEAR(expected, result);
+	//double result = Tir[0];
+	double expected = 9.656855;
+	ASSERT_DBL_NEAR(expected, Tir[0]);
 }
 CTEST(arithmetic_suite, test4)
 {
-	double Tria_Point[6] = {-3.0, -2.0, -1.0, 0.0, -3.0, -2.0};
+	double Tria_Point[6] = {-3.0, -2.0, -1.0, 0.0, -3.0, 2.0};
 	double* Tir = TriangleR(Tria_Point);
-	double result = Tir[1];
-	double expected = 0.000001;
-	ASSERT_DBL_NEAR(expected, result);
+	//double result = Tir[1];
+	double expected = 4.000001;
+	ASSERT_DBL_NEAR(expected, Tir[1]);
 }
