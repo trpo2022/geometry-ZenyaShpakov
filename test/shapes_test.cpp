@@ -7,7 +7,7 @@ CTEST(AOB, BOB)
 {
 	double Perc[9] = {-3.0, -2.0, -1.0, 0.0, -3.0, 2.0, 0.0, 0.0, 1.5};
 	const int result = Crossing(Perc);
-	const int expected = 0;
+	const int expected = 1;
 	ASSERT_EQUAL(expected, result);
 }	
 CTEST(arithmetic_suite, test1)
