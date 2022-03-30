@@ -46,10 +46,10 @@ int Crossing(double Perc[])
 	}
 	if (count == 0 || count == 3)
 	{
-		Ask = 1;
+		Ask = 0;
 	}else
 	{
-		Ask =  0;
+		Ask =  1;
 	}
 	return	Ask;
 }
