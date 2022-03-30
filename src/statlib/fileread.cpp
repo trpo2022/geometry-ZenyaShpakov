@@ -25,7 +25,8 @@ void Circle(char cc[])
     }
     for (int j = 0; j < 3; j++) printf("%f ", coordinate_to_circle_in_index[j]);
     printf("\n");
-    CircleR(coordinate_to_circle_in_index);
+   double* Cir =  CircleR(coordinate_to_circle_in_index);
+   printf("Perimetr of Circle %f\nSquare of Circle %f\n", Cir[0], Cir[1]);
 }
 
 void Triangle(char cc[])
@@ -50,7 +51,8 @@ void Triangle(char cc[])
     }
     for (int j = 0; j < 6; j++) printf("%f ", coordinate_to_triangle_in_index[j]);
     printf("\n");
-    TriangleR(coordinate_to_triangle_in_index);
+    double* Tir = TriangleR(coordinate_to_triangle_in_index);
+    printf("Perimetr of Triangle %f\nSquare of Triangle %f\n", Tir[0], Tir[1]);
     printf("\n");
 }
 
