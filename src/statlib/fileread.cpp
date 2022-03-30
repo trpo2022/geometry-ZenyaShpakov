@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+double Perc[9] = {0};
+
 void Circle(char cc[])
 {
     int i = 0;
@@ -23,10 +25,14 @@ void Circle(char cc[])
         }
         i++;
     }
-    for (int j = 0; j < 3; j++) printf("%f ", coordinate_to_circle_in_index[j]);
+    for (int j = 0; j < 3; j++)
+    {
+	    printf("%f ", coordinate_to_circle_in_index[j]);
+	    Perc[j+6] = coordinate_to_circle_in_index[j];
+    }	    
     printf("\n");
-   double* Cir =  CircleR(coordinate_to_circle_in_index);
-   printf("Perimetr of Circle %f\nSquare of Circle %f\n", Cir[0], Cir[1]);
+    double* Cir =  CircleR(coordinate_to_circle_in_index);
+    printf("Perimetr of Circle %f\nSquare of Circle %f\n", Cir[0], Cir[1]);
 }
 
 void Triangle(char cc[])
@@ -49,7 +55,11 @@ void Triangle(char cc[])
         }
         i++;
     }
-    for (int j = 0; j < 6; j++) printf("%f ", coordinate_to_triangle_in_index[j]);
+    for (int j = 0; j < 6; j++)
+    {
+	    printf("%f ", coordinate_to_triangle_in_index[j]);
+	    Perc[j] = coordinate_to_triangle_in_index[j];
+    }	    
     printf("\n");
     double* Tir = TriangleR(coordinate_to_triangle_in_index);
     printf("Perimetr of Triangle %f\nSquare of Triangle %f\n", Tir[0], Tir[1]);
@@ -71,5 +81,9 @@ void fileread()
         if (cc[0] == 't') Triangle(cc);
         if (cc[0] == 'c') Circle(cc);
     }
+    int Cross = Crossing(Perc);
+    if ( Cross == 1 ) printf("\nShapes is crossing\n");
+    if ( Cross == 0 ) printf("\nShapes is not crossing\n");
+   // for ( int i = 0; i < 9; i++) printf("%f ", Perc[i]);
     fclose(fp);
 }

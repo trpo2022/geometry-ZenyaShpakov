@@ -34,4 +34,22 @@ double *TriangleR(double Tria_Point[])
     Array_For_Shapes[1] = SquareTR;
     return Array_For_Shapes;
     delete Array_For_Shapes;
-}    
+}
+
+int Crossing(double Perc[])
+{
+	int count = 0;
+	int Ask = 0;
+	for ( int i = 0; i < 6; i += 2)
+	{
+		if ((Perc[6] - Perc[i]) * (Perc[6] - Perc[i]) + (Perc[7] - Perc[i+1]) * (Perc[7] - Perc[i+1]) < Perc[8] * Perc[8]) count ++;
+	}
+	if (count == 0 || count == 3)
+	{
+		Ask = 1;
+	}else
+	{
+		Ask =  0;
+	}
+	return	Ask;
+}
